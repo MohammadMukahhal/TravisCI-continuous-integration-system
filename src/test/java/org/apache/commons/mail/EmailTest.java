@@ -177,4 +177,14 @@ public class EmailTest {
 		int num = email.getSocketConnectionTimeout();
 		assertEquals(email.getSocketConnectionTimeout(),num);
 	}
+	/*
+	Testing the setFrom(String email) method
+	basic test where we call the function that gets the email string
+	100% Coverage
+	*/
+	@Test
+	public void testSetFrom() throws Exception{
+		email.setFrom(TEST_EMAILS[0]);
+		
+	}
 }
