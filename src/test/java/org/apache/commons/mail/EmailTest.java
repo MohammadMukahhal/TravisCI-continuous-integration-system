@@ -49,4 +49,20 @@ public class EmailTest {
 		//Checking if one email has been added
 		assertEquals(1,email.getCcAddresses().size());
 	}
+	/*
+	Testing the addHeader(String,String) method
+	78.3% Coverage
+	*/
+	@Test
+	public void testAddHeader() throws Exception{
+		email.addHeader("MUST_READ", "Hi");
+	}
+	/*
+	Testing the addHeader(String,String) method to ensure that the null aspect is covered
+	78.3% Coverage
+	*/
+	@Test(expected = IllegalArgumentException.class)
+	public void testAddHeaderNull() throws Exception{
+		email.addHeader("MUST READ", "");
+	}
 }
