@@ -74,5 +74,33 @@ public class EmailTest {
 		email.addReplyTo(TEST_EMAILS[0]);
 		//assertEquals(TEST_EMAILS[0],email.getReplyToAddresses());
 	}
+	/*
+	Testing the buildMimeMessage() method
+	65.8% Coverage
+	*/
+	@Test
+	public void testMimeMessage() throws Exception {
+	  email.setHostName("localHost");
+	  email.setSmtpPort(1234);
+	  email.setFrom("abc@gmail.com");
+	  email.addTo("c@d.com");
+	  email.setSubject("test mail");
+	  email.addCc("this@gmail.com");
+	  email.addBcc("toqp@gmail.com");
+	  email.addHeader("Test", "adfa");
+	  email.addReplyTo("gg@gmail.com");
+	  
+	  email.setCharset("ISO-8859-1");
+	  email.setContent("test content", "text/plain");
+	  email.buildMimeMessage();
+	}
+	/*
+	Testing the buildMimeMessage method at null value
+	*/
+	@Test (expected=Exception.class)
+	public void testBuildMimeMessageNull() throws Exception{
+		email.buildMimeMessage();
+		
+	}
 	
 }
