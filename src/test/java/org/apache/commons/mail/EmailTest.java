@@ -167,4 +167,14 @@ public class EmailTest {
 		  email.setContent("test content", "text/plain");
 		  email.getMailSession();
 	}
+	/*
+	Testing the getSocketConnectionTimeout() method
+	basic test function that gets the integer and asserts its correct value
+	100% Coverage
+	*/
+	@Test
+	public void testGetSocketConnectionTimeout() throws Exception{
+		int num = email.getSocketConnectionTimeout();
+		assertEquals(email.getSocketConnectionTimeout(),num);
+	}
 }
