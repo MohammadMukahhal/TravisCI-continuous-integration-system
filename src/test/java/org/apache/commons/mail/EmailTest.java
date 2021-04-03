@@ -102,5 +102,24 @@ public class EmailTest {
 		email.buildMimeMessage();
 		
 	}
+	/*
+	Testing the getHostName() method
+	70.6 Coverage
+	*/
+	@Test
+	public void testGetHostName() throws Exception{
+		email.setHostName("LocalHost");
+		String name = email.getHostName();
+		assertEquals("LocalHost",name);
+	}
+	/*
+	Testing the getHostName() method at null value
+	70.6 Coverage
+	*/
+	@Test
+	public void testGetHostNameNull() throws Exception{
+		email.setHostName(null);
+		assertEquals(null,email.getHostName());
+	}
 	
 }
