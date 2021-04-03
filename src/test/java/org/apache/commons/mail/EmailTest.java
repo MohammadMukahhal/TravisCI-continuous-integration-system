@@ -65,4 +65,14 @@ public class EmailTest {
 	public void testAddHeaderNull() throws Exception{
 		email.addHeader("MUST READ", "");
 	}
+	/*
+	Testing the addReplyTo(String email, String name) method
+	100% Coverage
+	*/
+	@Test
+	public void testAddReplyTo() throws Exception{
+		email.addReplyTo(TEST_EMAILS[0]);
+		//assertEquals(TEST_EMAILS[0],email.getReplyToAddresses());
+	}
+	
 }
