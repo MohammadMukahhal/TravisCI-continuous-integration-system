@@ -139,4 +139,32 @@ public class EmailTest {
 		email.setSentDate(new Date() );
 		email.getSentDate();
 	}
+	/*
+	Testing the getMailSession() method at empty value
+	tests an empty value
+	72% Coverage
+	*/
+	@Test (expected=EmailException.class)
+	public void testGetMailSessionEmpty() throws Exception{
+		email.getMailSession();
+	}
+	/*
+	Testing the getMailSession() method
+	72% Coverage
+	*/
+	@Test
+	public void testGetMailSession() throws Exception{
+		email.setHostName("localHost");
+		  email.setSmtpPort(1234);
+		  email.setFrom("abc@gmail.com");
+		  email.addTo("c@d.com");
+		  email.setSubject("test mail");
+		  email.addCc("this@gmail.com");
+		  email.addBcc("toqp@gmail.com");
+		  email.addHeader("Test", "adfa");
+		  
+		  email.setCharset("ISO-8859-1");
+		  email.setContent("test content", "text/plain");
+		  email.getMailSession();
+	}
 }
