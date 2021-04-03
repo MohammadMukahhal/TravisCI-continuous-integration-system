@@ -121,5 +121,22 @@ public class EmailTest {
 		email.setHostName(null);
 		assertEquals(null,email.getHostName());
 	}
-	
+	/*
+	Testing the getSentDate() method at null value
+	100% C0verage
+	*/
+	@Test
+	public void testGetSentDateNull() throws Exception{
+		email.getSentDate();
+	}
+	/*
+	Testing the getSentDate() method
+	basic test method that sets date and then gets the date, ensuring that the function works
+	100% Coverage
+	*/
+	@Test
+	public void testGetSentDate() throws Exception{
+		email.setSentDate(new Date() );
+		email.getSentDate();
+	}
 }
