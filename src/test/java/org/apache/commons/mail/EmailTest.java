@@ -39,4 +39,14 @@ public class EmailTest {
 		//There are 3 email's in TEST_EMAILS, we have to confirm that all 3 are in BccAdresses
 		assertEquals(3,email.getBccAddresses().size());
 	}
+	/*
+	Testing the Email  addCc(String) method
+	100% Coverage
+	*/
+	@Test
+	public void testAddCc() throws Exception{
+		email.addCc(TEST_EMAILS[0]);
+		//Checking if one email has been added
+		assertEquals(1,email.getCcAddresses().size());
+	}
 }
